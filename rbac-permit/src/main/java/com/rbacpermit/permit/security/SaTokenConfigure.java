@@ -27,7 +27,7 @@ public class SaTokenConfigure  {
                              .check(r ->
                                      StpUtil.checkLogin());
 //                    sa-token路由权限认证
-                     SaRouter.match("/menu/**", r -> StpUtil.checkPermissionOr("writer"));
+                     SaRouter.match("/menu/**", r -> StpUtil.checkPermission("write"));
 
                 })
                 // 指定[异常处理函数]：每次[认证函数]发生异常时执行此函数

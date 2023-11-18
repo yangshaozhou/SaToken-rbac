@@ -28,9 +28,13 @@ public class StpInterfaceImpl implements StpInterface {
      * @param s
      * @return
      */
+
+
+//    注意：sa-token中的loginId的Object不能强制转换，必须要通过Long的自动装配
     @Override
     public List<String> getPermissionList(Object loginId, String s) {
-        Long userId = (Long) loginId;
+
+        Long userId = Long.valueOf((String) loginId);
         List<String> permitList = menuMapper.searchPermitById(userId);
         log.info("permit:{}",permitList.toString());
         return permitList;

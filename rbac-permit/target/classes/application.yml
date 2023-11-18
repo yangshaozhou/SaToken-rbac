@@ -1,0 +1,33 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  datasource:
+    url: jdbc:mysql://121.41.92.252:3306/rbac
+    username: root
+    driver-class-name:
+    password: Yangsz04150018
+  redis:
+    host: 121.41.92.252
+    port: 6379
+    password: 123456
+    database: 0
+    lettuce:
+      pool:
+        min-idle: 0 #最小空闲数
+        max-active: 8 #链接池的最大数据库链接数
+        max-idle: 8 #最大空闲数
+        max-wait: -1 #最大等待时间
+
+
+sa-token:
+  token-name: satoken #????cookie
+  timeout: -1 # token????
+  active-timeout: -1 # ?? token ???????????????????-1 ??????????
+
+
+
+
+

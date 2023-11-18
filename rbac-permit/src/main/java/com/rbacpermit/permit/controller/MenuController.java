@@ -1,7 +1,9 @@
 package com.rbacpermit.permit.controller;
 
 
+import cn.dev33.satoken.stp.StpUtil;
 import com.rbacpermit.util.RestResp;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -19,10 +21,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/menu")
+@Slf4j
 public class MenuController {
 
     @PostMapping("/add")
     public RestResp<Void> addMenu(){
+        log.info((String) StpUtil.getLoginId());
+        Object id =StpUtil.getLoginId();
+        log.info(StpUtil.getPermissionList(id).toString());
         return RestResp.ok();
     }
 }
