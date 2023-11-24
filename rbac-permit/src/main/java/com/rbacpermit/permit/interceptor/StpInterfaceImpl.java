@@ -8,6 +8,10 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+/**
+ *
+ * spring容器管理的
+ */
 @Component
 @Slf4j
 public class StpInterfaceImpl implements StpInterface {
